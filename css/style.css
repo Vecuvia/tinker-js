@@ -38,3 +38,9 @@ nav button {
 nav button.unselected {
   border-color: #CDDDDD;
 }
+
+code[class*="language-"], pre[class*="language-"] {
+  text-shadow: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

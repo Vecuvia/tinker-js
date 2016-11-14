@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/codeflask.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav>
@@ -30,7 +30,11 @@
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript">
     var html = new CodeFlask;
-    html.runAll('#html', {language: "html"});
+    html.run('#html', {language: "html"});
+    var js = new CodeFlask;
+    js.run("#js", {language: "js"});
+    var css = new CodeFlask;
+    css.run("#css", {language: "css"});
   </script>
 </body>
 </html>
