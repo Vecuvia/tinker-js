@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/codeflask.css">
 </head>
 <body>
   <nav>
@@ -15,14 +17,20 @@
     <button id="run">Run</button>
   </nav>
   <main>
-    <textarea id="html"></textarea>
-    <textarea id="js"></textarea>
-    <textarea id="css"></textarea>
+    <div class="editor" id="html" data-language="html"></div>
+    <div class="editor" id="js" data-language="js"></div>
+    <div class="editor" id="css" data-language="css"></div>
     <iframe id="result" src=""></iframe>
   </main>
   <footer>
     Made with &lt;3 and a whole lot of "I got nothing to do"
   </footer>
+  <script src="js/prism.js"></script>
+  <script src="js/codeflask.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript">
+    var html = new CodeFlask;
+    html.runAll('#html', {language: "html"});
+  </script>
 </body>
 </html>
