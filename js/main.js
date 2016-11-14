@@ -1,5 +1,3 @@
-var html_source = "", js_source = "", css_source = "";
-
 [
   "html",
   "js",
@@ -26,11 +24,12 @@ document
 .addEventListener("click", function (event) {
   var page = "data:text/html;charset=utf-8," +
     encodeURIComponent(
-    "<!DOCTYPE html>"+
-    "<html lang=\"en\">"+
-    "<head><style>" + css_source + "</style></head>"+
-    "<body>" + html_source + 
-    "<script type=\"text/javascript\">" + js_source + "</script></body>"+
+    "<!DOCTYPE html>" +
+    "<html lang=\"en\">" +
+    "<head><style>" + (localStorage["css"] || "") + "</style></head>" +
+    "<body>" + (localStorage["html"] || "") +
+    "<script type=\"text/javascript\">" + (localStorage["js"] || "") +
+    "</script></body>" +
     "</html>"
   );
   document.getElementById('result').setAttribute('src', page);

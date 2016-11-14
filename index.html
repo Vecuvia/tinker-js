@@ -29,20 +29,26 @@
   <script src="js/codeflask.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript">
+    /* HTML editor */
     var html = new CodeFlask;
     html.run('#html', {language: "html"});
+    html.update(localStorage["html"] || "<!-- HTML -->");
     html.onUpdate(function(code) {
-      html_source = code;
+      localStorage["html"] = code;
     });
+    /* JS editor */
     var js = new CodeFlask;
     js.run("#js", {language: "js"});
+    js.update(localStorage["js"] || "/* JS code */");
     js.onUpdate(function(code) {
-      js_source = code;
+      localStorage["js"] = code;
     });
+    /* CSS editor */
     var css = new CodeFlask;
     css.run("#css", {language: "css"});
+    css.update(localStorage["css"] || "/* CSS */");
     css.onUpdate(function(code) {
-      css_source = code;
+      localStorage["css"] = code;
     });
   </script>
 </body>
