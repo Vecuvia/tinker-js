@@ -24,12 +24,14 @@ document
 .addEventListener("click", function (event) {
   var html = document.getElementById("html").value;
   var css = document.getElementById("css").value;
+  var js = document.getElementById("js").value;
   var page = "data:text/html;charset=utf-8," +
     encodeURIComponent(
     "<!DOCTYPE html>"+
     "<html lang=\"en\">"+
     "<head><style>" + css + "</style></head>"+
-    "<body>" + html + "</body>"+
+    "<body>" + html + 
+    "<script type=\"text/javascript\">" + js + "</script></body>"+
     "</html>"
   );
   document.getElementById('result').setAttribute('src', page);
