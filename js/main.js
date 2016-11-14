@@ -1,3 +1,5 @@
+var html_source = "", js_source = "", css_source = "";
+
 [
   "html",
   "js",
@@ -22,16 +24,13 @@
 document
 .getElementById("run")
 .addEventListener("click", function (event) {
-  var html = document.getElementById("html").value;
-  var css = document.getElementById("css").value;
-  var js = document.getElementById("js").value;
   var page = "data:text/html;charset=utf-8," +
     encodeURIComponent(
     "<!DOCTYPE html>"+
     "<html lang=\"en\">"+
-    "<head><style>" + css + "</style></head>"+
-    "<body>" + html + 
-    "<script type=\"text/javascript\">" + js + "</script></body>"+
+    "<head><style>" + css_source + "</style></head>"+
+    "<body>" + html_source + 
+    "<script type=\"text/javascript\">" + js_source + "</script></body>"+
     "</html>"
   );
   document.getElementById('result').setAttribute('src', page);

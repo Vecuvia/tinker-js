@@ -31,10 +31,19 @@
   <script type="text/javascript">
     var html = new CodeFlask;
     html.run('#html', {language: "html"});
+    html.onUpdate(function(code) {
+      html_source = code;
+    });
     var js = new CodeFlask;
     js.run("#js", {language: "js"});
+    js.onUpdate(function(code) {
+      js_source = code;
+    });
     var css = new CodeFlask;
     css.run("#css", {language: "css"});
+    css.onUpdate(function(code) {
+      css_source = code;
+    });
   </script>
 </body>
 </html>
