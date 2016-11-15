@@ -24,13 +24,21 @@ main {
 
 iframe {
   border: none;
+  /* This - this is hackish, but it seems that without it the iframe flexbox
+   * isn't working properly, making the iframe expand to take up more space
+   * than what should be its alloted amount. #HACK
+   */
   height: 100px;
 }
 
 main .editor, iframe {
+  flex: 1 0;
+  /* Same hack as before - min-width to avoid the iframe taking up more space
+   * than what it should take, and min-height to avoid the editors being
+   * completely and utterly squashed by the iframe when on mobile. #HACK
+   */
   min-height: 100px;
   min-width: 192px;
-  flex: 1 0;
 }
 
 main .editor {
@@ -42,6 +50,7 @@ main .editor {
     flex-direction: row;
   }
   iframe {
+    /* A fix for my earlier hack for when the layout is horizontal. #HACK */
     height: auto;
   }
   main .editor {
@@ -77,6 +86,11 @@ nav button.unselected {
   border-color: #051014;
 }
 
+/* This is to fix a problem with the CodeFlask editor, with shadowed text
+ * *and* an useless scrollbar appearing when overflowing the container.
+ * The shadowed text appears to be wrapped, but it actually isn't, and it
+ * overlaps with the real text. #CODEFLASK #FIX
+ */
 code[class*="language-"], pre[class*="language-"] {
   text-shadow: none;
   white-space: pre-wrap;
